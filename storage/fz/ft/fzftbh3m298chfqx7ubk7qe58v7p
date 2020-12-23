@@ -1,0 +1,91 @@
+psql -U postgres -W  // command to enter into  postgres
+sudo -u postgres psql// new command to enter into postgres
+
+username = postgres   // 
+password = root
+
+
+CREATE DATABASE peerlogic_db;
+
+
+
+
+ gem 'active_model_serializers'
+
+\q    to exit from database
+
+\l to list out the database present
+
+\c database_name  // switch to other database
+
+
+\dt   // to list out the tables
+
+\d table_name //to describe the table
+
+
+rails new peerlogic --api -d postgresql
+
+rails g scaffold User name email:uniq password:digest
+
+
+https://levelup.gitconnected.com/creating-a-basic-rails-crud-app-8720a53f0158
+
+
+development:
+adapter: postgresql
+encoding: unicode
+database: peerlogic_local
+host: localhost
+pool: 5
+username: postgres
+password: root
+
+# Warning: The database defined as "test" will be erased and
+# re-generated from your development database when you run "rake".
+# Do not set this db to the same as development or production.
+test:
+  <<: *default
+  database: db/test.sqlite3
+
+production:
+adapter: postgresql
+encoding: unicode
+database: peerlogic_local
+host: localhost
+pool: 5
+username: postgres
+password: <%= ENV['peerlogic_local_Password'] %>
+role: MyRole
+
+
+Rails.application.routes.draw do
+  resources :users do
+    resources :users, only: [:index, :show, :new, :edit]
+    collection do
+      post 'login'
+    end
+  end
+end
+
+
+
+
+
+ <td><%= link_to 'Edit', edit_user_path(user) %></td>
+
+https://www.youtube.com/watch?v=B-8dJLSB3hU
+
+
+
+
+ALTER TABLE candidate_details RENAME COLUMN marks TO percentage;
+
+ALTER TABLE candidate_details ALTER COLUMN filename set NOT NULL;
+
+
+
+
+
+
+

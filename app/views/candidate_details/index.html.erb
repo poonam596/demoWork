@@ -1,0 +1,44 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Candidate Details</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>First</th>
+      <th>Last</th>
+      <th>Email</th>
+      <th>Phone</th>
+      <th>Degree</th>
+      <th>Percentage</th>
+      <th>Experience</th>
+      <th>Platform</th>
+      <th>Cv</th>
+
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @candidate_details.each do |candidate_detail| %>
+      <tr>
+        <td><%= candidate_detail.first %></td>
+        <td><%= candidate_detail.last %></td>
+        <td><%= candidate_detail.email %></td>
+        <td><%= candidate_detail.phone %></td>
+        <td><%= candidate_detail.degree %></td>
+        <td><%= candidate_detail.percentage %></td>
+        <td><%= candidate_detail.experience %></td>
+        <td><%= candidate_detail.platform %></td>
+        <td><%= link_to 'Download', candidate_detail.file, download: '' %></td>
+        <td><%= link_to 'Show', candidate_detail %></td>
+        <td><%= link_to 'Edit', edit_candidate_detail_path(candidate_detail) %></td>
+        <td><%= link_to 'Destroy', candidate_detail, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Candidate Detail', new_candidate_detail_path %>

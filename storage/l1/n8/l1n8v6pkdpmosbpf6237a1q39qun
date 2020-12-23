@@ -1,0 +1,19 @@
+table : candidate_details
+
+model name: CandidateDetail
+user_id should be stored in this table
+
+
+so, basically we need UI wherein we'll fill applicants details like name/ phone/ email/ degree/ marks/ experience/ platform etc.. this data should be stored with a facility to upload cv maybe.. and other UI to retrieve data based on name/ email/ platform..
+
+
+heroku: how to deploy app on heroku
+password: 6 digit
+
+
+rails g scaffold candidate_details first:string last:string email:uniq phone:int degree:string marks:int experience:int platform:string
+
+NoMethodError: undefined method `int' for #<ActiveRecord::ConnectionAdapters::PostgreSQL::TableDefinition:0x000055634599c5e8>
+
+
+
